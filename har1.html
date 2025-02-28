@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Harsha Kola's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm a passionate front-end developer with experience in HTML, CSS, and Bootstrap. I enjoy building interactive and responsive web applications that provide great user experiences.</p>
+    </section>
+    
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>Bachelor's Degree in Computer Science</strong> - Sasi Institute of Technology and Engineering (Graduating: 2026)</li>
+            <li><strong>Diploma in EEE</strong> - Sri Vasavi Engineering College (Completed: 2023)</li>
+            <li><strong>School</strong> - Sri Aditya Public School (Completed: 2020)</li>
+        </ul>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <p>Vote for the skill you think is my strongest!</p>
+        <form id="pollForm">
+            <label><input type="radio" name="skill" value="HTML"> HTML</label>
+            <label><input type="radio" name="skill" value="CSS"> CSS</label>
+            <label><input type="radio" name="skill" value="Bootstrap"> Bootstrap</label>
+            <label><input type="radio" name="skill" value="JavaScript"> JavaScript</label>
+            <label><input type="radio" name="skill" value="React"> React</label>
+            <label><input type="radio" name="skill" value="Node.js"> Node.js</label>
+            <label><input type="radio" name="skill" value="MongoDB"> MongoDB</label>
+            <label><input type="radio" name="skill" value="Express.js"> Express.js</label>
+            <button type="button" onclick="submitVote()">Vote</button>
+        </form>        
+
+        <h3>Poll Results:</h3>
+        <ul id="pollResults">
+            <li>HTML: <span id="htmlVotes">0</span></li>
+            <li>CSS: <span id="cssVotes">0</span></li>
+            <li>Bootstrap: <span id="bootstrapVotes">0</span></li>
+            <li>JavaScript: <span id="jsVotes">0</span></li>
+            <li>React: <span id="reactVotes">0</span></li>
+            <li>Node.js: <span id="nodeVotes">0</span></li>
+            <li>MongoDB: <span id="mongoVotes">0</span></li>
+            <li>Express.js: <span id="expressVotes">0</span></li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Hospital Management Website</h3>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYetTX5C0gaCYiBCPneP-loxvVjdDuQ9Co0w&s" alt="Hospital Management Project" class="project-img">
+            <p>A project to manage hospital beds dynamically. This project allows hospitals to track available beds and provides real-time updates for patient management.</p>
+        </div>
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYhC1KfwPnVA8dTUyGyoJMf_kJgfexHstLUQ&s" alt="Portfolio Website" class="project-img">
+            <p>A personal website to showcase my work and skills. Designed using modern UI/UX principles with a responsive layout.</p>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: harsha.kola@sasi.ac.in</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/kola-harsha-vardhan-reddy-046015274"> www.linkedin.com/in/kola-harsha-vardhan-reddy-046015274</a></p>
+        <p>GitHub: <a href="https://github.com/harsha14879"> https://github.com/harsha14879</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Harsha Kola. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let votes = {
+            "HTML": 0,
+            "CSS": 0,
+            "Bootstrap": 0,
+            "JavaScript": 0,
+            "React": 0,
+            "Node.js": 0,
+            "MongoDB": 0,
+            "Express.js": 0
+        };
+
+        function submitVote() {
+            let selectedSkill = document.querySelector('input[name="skill"]:checked');
+            if (selectedSkill) {
+                let skill = selectedSkill.value;
+                votes[skill]++;
+                updateResults();
+            } else {
+                alert("Please select a skill to vote!");
+            }
+        }
+
+        function updateResults() {
+            for (let skill in votes) {
+                document.getElementById(skill.toLowerCase() + "Votes").textContent = votes[skill];
+            }
+        }
+    </script>
+</body>
+</html>
