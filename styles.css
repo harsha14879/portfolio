@@ -106,6 +106,39 @@ section {
     width: 100%;
     border-radius: 10px;
 }
+.certificates-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    justify-content: center; /* Centers items */
+    gap: 20px; /* Space between certificates */
+}
+
+.certificate {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px; /* Set a fixed width for alignment */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.certificate img {
+    width: 100%; /* Makes images responsive */
+    border-radius: 5px;
+}
+
+.certificate a {
+    display: block;
+    margin-top: 10px;
+    color: #ffdd57;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.certificate a:hover {
+    text-decoration: underline;
+}
+
 
 /* Contact */
 #contact a {
